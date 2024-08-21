@@ -1,0 +1,17 @@
+[package]
+name = "iced-counter"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+iced = { version = "0.12.1", features = ["debug"] }
+
+[profile.release]
+opt-level = "z"
+lto = "fat"
+debug = true
+codegen-units = 1
+panic = 'abort'
+strip = true
+debug-assertions = false
+overflow-checks = false
